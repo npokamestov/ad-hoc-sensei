@@ -18,6 +18,7 @@ const Navigation = () => {
     return (
         
         <Container>
+        <br />
             <Navbar bg="primary" variant="dark">
                 <Navbar.Brand href="#home">SENSEI</Navbar.Brand>
                 <Nav className="mr-auto">
