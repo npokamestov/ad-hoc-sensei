@@ -1,8 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import  Navigation  from './components/Navigation';
-//import {navigation} from './components'
+import {Navigation} from './components'
+import {Home} from './pages'
+import {Login} from './pages'
+import {Register} from './pages'
 
 
 
@@ -11,8 +13,11 @@ import  Navigation  from './components/Navigation';
 function App() {
   return (
     <div className="App">
-       
-       <Navigation />
+
+          <Navigation />
+          {/* <Home /> */}
+          {/* <Login /> */}
+          <Register />
     </div>
   );
 }
