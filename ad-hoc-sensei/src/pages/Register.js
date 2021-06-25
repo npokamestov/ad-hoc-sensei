@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Alert from 'react-bootstrap/Alert'
 import { useState , useEffect } from 'react';
+import axios from 'axios';
 
 
 
@@ -40,7 +41,15 @@ const Register = () => {
 
             }
 
-            console.log(registrationData)
+            axios.post("http://localhost:8142/register", registrationData)
+            .then(res => {
+                console.log(res.data)
+            })
+            .catch(
+                err => {
+                    console.log(err)
+                }
+            )
                 
          
 
@@ -63,7 +72,7 @@ const Register = () => {
                                     <Form.Label>Email</Form.Label>
                                     <Form.Control type="email" placeholder="Enter email"
                                     value={email} onChange={e => setEmail(e.target.value)} 
-                                        
+
                                     />
                                 </Form.Group>
                             

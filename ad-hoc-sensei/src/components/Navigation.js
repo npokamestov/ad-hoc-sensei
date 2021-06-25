@@ -18,6 +18,7 @@ const Navigation = () => {
         <Container>
         
             <Navbar bg="primary" variant="dark">
+            
             <LinkContainer to="/">
                 <Navbar.Brand >SENSEI</Navbar.Brand>
             </LinkContainer>
