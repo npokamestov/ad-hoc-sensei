@@ -2,11 +2,9 @@ import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-// import Container from 'react-bootstrap/Container'
+import { LinkContainer } from 'react-router-bootstrap';
 
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
-import FormControl from 'react-bootstrap/FormControl'
+
 
 
 
@@ -18,20 +16,34 @@ const Navigation = () => {
     return (
         
         <Container>
-        <br />
+        
             <Navbar bg="primary" variant="dark">
-                <Navbar.Brand href="#home">SENSEI</Navbar.Brand>
+            <LinkContainer to="/">
+                <Navbar.Brand >SENSEI</Navbar.Brand>
+            </LinkContainer>
                 <Nav className="mr-auto">
+                 
+                 
+                    <LinkContainer to="/home/">
+                        <Nav.Link >Home</Nav.Link>
+                    </LinkContainer>
 
-                    <Nav.Link href="#home">Home</Nav.Link>
-                  
-                    <Nav.Link href="#courses">Courses</Nav.Link>
+                    <LinkContainer to="/home/courses">
+                        <Nav.Link >Courses</Nav.Link>
+                    </LinkContainer>
 
-                    <Nav.Link href="#login">Login</Nav.Link>
+                    <LinkContainer to="/home/login">
+                        <Nav.Link >Login</Nav.Link>
+                    </LinkContainer>
 
-                    <Nav.Link href="#about">About</Nav.Link>
+                    <LinkContainer to="/home/about">
+                        <Nav.Link >About</Nav.Link>
+                     </LinkContainer>
 
-                    <Nav.Link href="#contact">Contact</Nav.Link>
+                     <LinkContainer to="/home/contact">
+                        <Nav.Link>Contact</Nav.Link>
+                    </LinkContainer>
+
 
                 </Nav>
                 
