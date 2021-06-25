@@ -12,7 +12,7 @@ import FormControl from 'react-bootstrap/FormControl'
 
 
 
-const navigation = () => {
+const Navigation = () => {
 
 
     return (
@@ -34,4 +34,4 @@ const navigation = () => {
     )
 }
 
-export default navigation
+export default Navigation
