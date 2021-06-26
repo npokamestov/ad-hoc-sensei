@@ -2,22 +2,32 @@ import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
+import Row from 'react-bootstrap/Row'
 import { LinkContainer } from 'react-router-bootstrap';
 import {useHistory} from 'react-router-dom';
 
 
 const StudentDashHeader = () => {
 
-    const history = useHistory();
-
+    
     return (
         <Container>
-        
-            <Navbar bg="primary" variant="dark">
-            
-            <LinkContainer to="/" onClick={() => history.push('/')}>
-                <Navbar.Brand >Ad Hoc Sensei</Navbar.Brand>
-            </LinkContainer>
+        <Row>
+
+
+        <Navbar expand="sm" bg="primary" variant="dark">
+                
+                <LinkContainer to="/" >
+                  <Navbar.Brand >
+                     {/* <img alt="" src="/logo.svg" width="30" height="30" className="d-inline-block align-top" 
+                       
+                     />{' '} */}
+                     Student Dashbord
+                   </Navbar.Brand>
+                </LinkContainer>
+
+
+
                 <Nav className="mr-auto">
                  
                  
@@ -36,7 +46,8 @@ const StudentDashHeader = () => {
                     
                 </Nav>
                 
-            </Navbar>
+             </Navbar>
+          </Row>
         </Container>
     )
 }

@@ -10,15 +10,17 @@ import {useHistory} from 'react-router-dom';
 
 const SenseiDashHeader = () => {
 
+    
     const history = useHistory();
+    //whats the diffrence replace with push
 
     return (
         <Container>
         
             <Navbar bg="primary" variant="dark">
             
-            <LinkContainer to="/"  onClick={() => history.push('/')}>
-                <Navbar.Brand >Ad Hoc Sensei</Navbar.Brand>
+            <LinkContainer to="/"  onClick={() => history.replace('/')}>
+                <Navbar.Brand >Sensei Dashbord</Navbar.Brand>
             </LinkContainer>
                 <Nav className="mr-auto">
                  

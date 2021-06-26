@@ -1,24 +1,32 @@
 import React from 'react'
+import Alert from 'react-bootstrap/Alert'
 import Container from 'react-bootstrap/Container'
+import Form from 'react-bootstrap/Form'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
 import Nav from 'react-bootstrap/Nav'
-import Alert from 'react-bootstrap/Alert'
 import { LinkContainer } from 'react-router-bootstrap';
 import { useState , useEffect } from 'react';
-import axios from 'axios';
-
+import {useHistory} from 'react-router-dom';
+import axios from "axios";
 
 
 const Login = () => {
+
+    const history = useHistory();
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     function handleSubmit (e){
         e.preventDefault();
+
+        //base on call back we need change this
+       // history.push('/studentdash/')
+       history.push('/senseidash/')
+       refreshPage()
+        
 
         const loginData = {
             email : email,
@@ -30,22 +38,19 @@ const Login = () => {
                 setEmail("");
                 setPassword("");
                 console.log(res.data)
-
+                console.log("Hi I'm axios")
+                // history.push('/senseidash/')
+                // refreshPage()
             })
+                     
             .catch(
                 err => {
                     console.log(err)
-                }
-            ).then(function () {
-                // always executed
-                //refreshPage();
-              });
-
-              function refreshPage(){
-                window.location.reload(false)
-            }
+                });
             
-     
+                function refreshPage() {
+                    window.location.reload(false);
+                  }
 
     }
 

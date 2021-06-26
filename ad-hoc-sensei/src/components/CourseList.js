@@ -3,7 +3,7 @@ import { MDBDataTable } from 'mdbreact';
 import "./style.css";
 import axios from "axios";
 
-const Table = () => {
+const CourseList = () => {
 
   const [rows, setRow] = useState([]);
   const [columns] = useState([
@@ -86,4 +86,4 @@ const Table = () => {
 
 }
 
-export default Table;
+export default CourseList;

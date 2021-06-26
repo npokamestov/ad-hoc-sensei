@@ -50,7 +50,7 @@ const Register = () => {
                 setBio("");
                 setInstructor(false);
                 console.log(res.data)
-                //refreshPage();
+                refreshPage();
 
 
             })
@@ -63,7 +63,8 @@ const Register = () => {
         }
 
         function refreshPage(){
-            window.location.reload(false)
+            // window.location.reload(false)
+            window.location.reload()
         }
 
 
