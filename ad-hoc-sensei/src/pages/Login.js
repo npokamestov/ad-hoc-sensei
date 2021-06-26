@@ -8,6 +8,7 @@ import Nav from 'react-bootstrap/Nav'
 import Alert from 'react-bootstrap/Alert'
 import { LinkContainer } from 'react-router-bootstrap';
 import { useState , useEffect } from 'react';
+import axios from 'axios';
 
 
 
@@ -24,8 +25,25 @@ const Login = () => {
             password : password
            
         }
+        axios.get("http://localhost:8142/login", loginData)
+            .then(res => {
+                setEmail("");
+                setPassword("");
+                console.log(res.data)
 
-        console.log(loginData)
+            })
+            .catch(
+                err => {
+                    console.log(err)
+                }
+            ).then(function () {
+                // always executed
+                //refreshPage();
+              });
+
+              function refreshPage(){
+                window.location.reload(false)
+            }
             
      
 
@@ -72,7 +90,9 @@ const Login = () => {
 
                                
 
-                            <Button variant="primary" type="submit" onClick={handleSubmit} >
+                            <Button variant="primary" type="submit"  
+                            onClick={handleSubmit}
+                            >
                                 Submit
                             </Button>
                         </Form>

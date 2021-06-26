@@ -30,7 +30,7 @@ const Register = () => {
 
         function handleSubmit (e){
             e.preventDefault();
-
+            
             const registrationData = {
                 email : email,
                 password : password,
@@ -43,16 +43,32 @@ const Register = () => {
 
             axios.post("http://localhost:8142/register", registrationData)
             .then(res => {
+                setEmail("");
+                setPassword("");
+                setFirstName("");
+                setLastName("");
+                setBio("");
+                setInstructor(false);
                 console.log(res.data)
+                
+
+
             })
             .catch(
                 err => {
                     console.log(err)
                 }
-            )
-                
-         
+            ).then(function () {
+                // always executed
+                refreshPage();
+              });
+            
+                 
 
+        }
+
+        function refreshPage(){
+            window.location.reload(false)
         }
 
 
