@@ -6,9 +6,9 @@ import {Navigation} from './components'
 import {Home} from './pages'
 import {Login} from './pages'
 import {Register} from './pages'
-
-
-
+import {Courses} from './pages'
+import {SenseiDashboard} from './pages'
+import {StudentDashboard} from './pages'
 
 
 function App() {
@@ -29,6 +29,11 @@ function App() {
 
           <Route  exact path='/home/register' component={Register} />
           
+          <Route  exact path='/home/courses' component={Courses} />
+
+          <Route  exact path='/home/senseidashboard' component={SenseiDashboard} />
+
+          <Route  exact path='/home/studentdashboard' component={StudentDashboard} />
 
         </Switch>
       </BrowserRouter>
