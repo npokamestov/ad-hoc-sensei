@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { MDBDataTable } from 'mdbreact';
 import axios from "axios";
 
-const Table = () => {
+const StudentClassTable = () => {
 
   const [rows, setRow] = useState([]);
   const [columns] = useState([
@@ -34,6 +34,8 @@ const Table = () => {
         sort: 'dsc',
         width: 25
         },
+
+       
      ]);
  
 
@@ -68,4 +70,4 @@ const Table = () => {
   );
 }
 
-export default Table;
+export default StudentClassTable;

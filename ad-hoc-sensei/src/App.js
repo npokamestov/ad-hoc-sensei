@@ -1,39 +1,27 @@
 import logo from './logo.svg';
 import './App.css';
-import {BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Navigation} from './components'
-import {Home} from './pages'
-import {Login} from './pages'
-import {Register} from './pages'
-import {Courses} from './pages'
-import {SenseiDashboard} from './pages'
-import {StudentDashboard} from './pages'
+import {BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
+import IndexHomeComponents from './IndexHomeComponents';
+import IndexSenseiComponents from './IndexSenseiComponents';
+import IndexStudentComponents from './IndexStudentComponents';
+
+
+
 
 
 function App() {
   return (
     <div className="App">
 
-        <BrowserRouter>
-        <Navigation />
-        <Switch>
+      <BrowserRouter>
+         <Switch>    
 
-        
-         
-          
+           <Route  exact path='/' component={IndexHomeComponents} />
 
-          <Route exact path='/home/' component={Home} />
-    
-          <Route exact path='/home/login' component={Login} />
+              <Route  exact path='/senseidash/' component={IndexSenseiComponents} />
 
-          <Route  exact path='/home/register' component={Register} />
-          
-          <Route  exact path='/home/courses' component={Courses} />
-
-          <Route  exact path='/home/senseidashboard' component={SenseiDashboard} />
-
-          <Route  exact path='/home/studentdashboard' component={StudentDashboard} />
+              <Route  exact path='/studentdash/' component={IndexStudentComponents} />
 
         </Switch>
       </BrowserRouter>
