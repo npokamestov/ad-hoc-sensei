@@ -50,7 +50,7 @@ const Register = () => {
                 setBio("");
                 setInstructor(false);
                 console.log(res.data)
-                
+                //refreshPage();
 
 
             })
@@ -58,12 +58,7 @@ const Register = () => {
                 err => {
                     console.log(err)
                 }
-            ).then(function () {
-                // always executed
-                refreshPage();
-              });
-            
-                 
+            )                 
 
         }
 
