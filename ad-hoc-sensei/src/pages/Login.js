@@ -15,6 +15,7 @@ import axios from "axios";
 const Login = () => {
 
     const history = useHistory();
+    const [callBack, setCallBack] = useState([]) 
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -34,13 +35,11 @@ const Login = () => {
            
         }
         axios.get("http://localhost:8142/login", loginData)
-            .then(res => {
+                .then(res => {
                 setEmail("");
                 setPassword("");
-                console.log(res.data)
-                console.log("Hi I'm axios")
-                // history.push('/senseidash/')
-                // refreshPage()
+               /// setCallBack(res.data)
+                
             })
                      
             .catch(
@@ -49,11 +48,15 @@ const Login = () => {
                 });
             
                 function refreshPage() {
-                    window.location.reload(false);
+                    window.location.reload();
                   }
 
     }
 
+    useEffect(() =>{
+        
+        console.log("theinside the useEffenct :"+ callBack);
+    }, [callBack])
 
 
     return (
