@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+
+
 import { MDBDataTable } from 'mdbreact';
 // import "./style.css";
 import axios from "axios";
@@ -10,48 +15,52 @@ const Table = () => {
     
         {
         label: 'Course Title',
-        field: 'last',
-        sort: 'dsc',
-        width: 50
-        },   
-
-        {
-        label: 'Sensei First Name',
-        field: 'first',
+        field: 'title',
         sort: 'dsc',
         width: 50
         },
 
         {
-        label: 'Sensei Last Name',
-        field: 'first',
+        label: 'Description',
+        field: 'shortDescription',
+        sort: 'dsc',
+        width: 50
+        },
+
+        {
+        label: 'Starting Date',
+        field: 'date',
         sort: 'dsc',
         width: 50
             },
     
         {
-        label: 'Description',
-        field: 'email',
+        label: 'Location',
+        field: 'location',
         sort: 'dsc',
         width: 50
         },
 
         {
-        label: 'Start Date',
-        field: 'picture',
+        label: 'Duration',
+        field: 'duration',
         sort: 'dsc',
         width: 10
         },
 
         {
-        label: 'REGISTER BUTTON',
-        field: 'picture',
+        label: 'Category',
+        field: 'category',
         sort: 'dsc',
         width: 10
         },
-
-
-
+        {
+          label: 'Capacity',
+          field: 'capacity',
+          sort: 'dsc',
+          width: 10
+          },
+          
 
      ]);
  
@@ -64,27 +73,53 @@ const Table = () => {
       
       let employees = response.data.results.map(employee => {
         return {
-          first: employee.name.first,
-          last: employee.name.last,
-          email: employee.email,
-          picture: <img src={employee.picture.thumbnail} alt={employee.name.first} />
+          // first: employee.name.first,
+          // last: employee.name.last,
+          // email: employee.email,
+          // picture: <img src={employee.picture.thumbnail} alt={employee.name.first} />,
+
+                //  title : employees.title,
+                // category : employees.category,
+                // date : employees.date,
+                // shortDescription : employees.shortDescription,
+                // location : employees.location,
+                // duration : employees.duration,
+                // capacity : employees.capacity,
+                // longDescription : employees.longDescription,
         
         }
       });
-      setRow(employees); 
+      setRow(employees); //here should match with our data
     }
     allEmployees()
   }, [])
 
 
+  
+
   return (
-    <MDBDataTable
-      className='table'
-      striped
-      bordered
-      data={{columns,rows}}
-    />
-  );
+
+      <Container>
+          <Row>
+            <Col></Col>
+
+            <Col>
+
+                     <MDBDataTable
+                       className='table'
+                        striped
+                        bordered
+                        data={{ columns, rows }}
+                         />
+
+            </Col>
+
+            <Col></Col>
+          </Row>
+       </Container>
+  
+  
+       );
 }
 
 export default Table;

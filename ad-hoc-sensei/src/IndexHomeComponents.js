@@ -6,6 +6,8 @@ import {Home} from './pages'
 import {Login} from './pages'
 import {Register} from './pages'
 import {Courses} from './pages'
+import {ContactUs} from './pages'
+import {About} from './pages'
 
 
 
@@ -22,6 +24,8 @@ const IndexHomeComponents = () => {
                 <Route exact path='/home/login' component={Login} />
                 <Route exact path='/home/register' component={Register} />
                 <Route exact path='/home/courses' component={Courses} />
+                <Route exact path='/home/contact' component={ContactUs} />
+                <Route exact path='/home/about' component={About} />
         
         </Router>
 

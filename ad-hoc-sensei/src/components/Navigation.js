@@ -20,7 +20,7 @@ const Navigation = () => {
             <Navbar bg="primary" variant="dark">
             
             <LinkContainer to="/">
-                <Navbar.Brand >SENSEI</Navbar.Brand>
+                <Navbar.Brand >Ad Hoc Sensei</Navbar.Brand>
             </LinkContainer>
                 <Nav className="mr-auto">
                  

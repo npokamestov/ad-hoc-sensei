@@ -16,7 +16,7 @@ const StudentDashHeader = () => {
             <Navbar bg="primary" variant="dark">
             
             <LinkContainer to="/" onClick={() => history.push('/')}>
-                <Navbar.Brand >SENSEI</Navbar.Brand>
+                <Navbar.Brand >Ad Hoc Sensei</Navbar.Brand>
             </LinkContainer>
                 <Nav className="mr-auto">
                  

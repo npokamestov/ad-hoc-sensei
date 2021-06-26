@@ -58,14 +58,32 @@ const Table = () => {
   }, [])
 
 
+ 
+
   return (
-    <MDBDataTable
-      className='table'
-      striped
-      bordered
-      data={{columns,rows}}
-    />
-  );
+
+    <Container>
+        <Row>
+          <Col></Col>
+
+          <Col>
+
+                   <MDBDataTable
+                     className='table'
+                      striped
+                      bordered
+                      data={{ columns, rows }}
+                       />
+
+          </Col>
+
+          <Col></Col>
+        </Row>
+     </Container>
+
+
+     );
+
 }
 
 export default Table;
