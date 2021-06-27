@@ -4,12 +4,12 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
-
+import {useHistory} from 'react-router-dom';
 import axios from "axios";
 
 const SenseiClassTable = () => {
 
-
+  const history = useHistory();
   const [rows, setRow] = useState([]);
   const [columns] = useState([
     
@@ -77,17 +77,31 @@ const SenseiClassTable = () => {
      ]);
 
 
+
+
+  function handleEdit() {
+    history.push('/senseidash/courseformedit')
+    refreshPage()
+  }
+
+  function handleDelete() {
+    console.log("handleDelete")
+  }
+
+  function refreshPage() {
+    window.location.reload();
+  }
    
   
   useEffect(() => {
 
 
     async function allCourses() {
-      
-      let response = await axios.get('http://localhost:8142/course')
+      //https://randomuser.me/api/?results=200&nat=us  ==>this is sample of api
+      let response = await axios.get('http://localhost:8142/user/1')
       
             
-       let courseData = response.data.map(listOfCourses => {
+       let courseData = response.data.senseisCreatedCourses.map(listOfCourses => {
                
         return {
           
@@ -100,8 +114,8 @@ const SenseiClassTable = () => {
                 duration : listOfCourses.duration,
                 capacity : listOfCourses.capacity,
                 longDescription : listOfCourses.longDescription,
-                // Edit :  <Button variant="info"  onClick={() => handleEdit()}>Edit</Button>,
-                Delete :  <Button variant="danger"  onClick={() => console.log("Yahsa ")}>Delete</Button>
+                Edit :  <Button variant="info"  onClick={() => handleEdit()}>Edit</Button>,
+                Delete :  <Button variant="danger"  onClick={() => handleDelete()}>Delete</Button>
                
         }
       });

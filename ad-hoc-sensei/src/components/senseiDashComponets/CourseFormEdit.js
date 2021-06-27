@@ -61,7 +61,7 @@ const CourseFormEdit = () => {
                 setCapacity("");
                 setLongDescription("");
                 refreshPage();
-                history.push('/senseidash/courseformedit')
+                history.push('/senseidash/')
                 refreshPage()
 
             })
@@ -171,7 +171,7 @@ const CourseFormEdit = () => {
                             <Button variant="primary" type="submit"
                             onClick={handleSubmit}
                             >
-                                Submit
+                                Submit Changes
                             </Button>
                         </Form>
 

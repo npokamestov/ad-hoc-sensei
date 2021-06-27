@@ -72,7 +72,7 @@ const CourseForm = () => {
         }
 
         function refreshPage(){
-            window.location.reload(false)
+            window.location.reload()
         }
 
 
