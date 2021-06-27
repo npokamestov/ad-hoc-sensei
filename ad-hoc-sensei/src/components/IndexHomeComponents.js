@@ -2,13 +2,14 @@ import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 
-import Navigation from './components/Navigation'
-import Home from './pages/Home'
-import Login from './pages/Login'
-import Register from './pages/Register'
-import Courses from './pages/Courses'
-import ContactUs from './pages/ContactUs'
-import About from './pages/About'
+import Navigation from './landingPageComponent/Navigation'
+import Home from './landingPageComponent/Home'
+import Login from './landingPageComponent/Login'
+import Register from './landingPageComponent/Register'
+import Courses from './landingPageComponent/Courses'
+import ContactUs from './landingPageComponent/ContactUs'
+import About from './landingPageComponent/About'
+
 
 
 

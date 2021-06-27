@@ -2,9 +2,9 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {BrowserRouter, Switch, Route } from 'react-router-dom'
-import IndexHomeComponents from './IndexHomeComponents';
-import IndexSenseiComponents from './IndexSenseiComponents';
-import IndexStudentComponents from './IndexStudentComponents';
+import IndexHomeComponents from './components/IndexHomeComponents';
+import IndexSenseiComponents from './components/IndexSenseiComponents';
+import IndexStudentComponents from './components/IndexStudentComponents';
 
 
 

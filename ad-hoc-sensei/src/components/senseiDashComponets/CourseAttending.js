@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/Col'
 import { MDBDataTable } from 'mdbreact';
 import axios from "axios";
 
-const SenseiClassTable = () => {
+const CourseAttending = () => {
 
 
   const [rows, setRow] = useState([]);
@@ -73,15 +73,18 @@ const SenseiClassTable = () => {
           
 
      ]);
- 
 
+
+   
   
   useEffect(() => {
+
+
     async function allCourses() {
       
       let response = await axios.get('http://localhost:8142/course')
-  
       
+            
        let courseData = response.data.map(listOfCourses => {
                
         return {
@@ -94,12 +97,13 @@ const SenseiClassTable = () => {
                 location : listOfCourses.location,
                 duration : listOfCourses.duration,
                 capacity : listOfCourses.capacity,
-                longDescription : listOfCourses.longDescription
-                
+                longDescription : listOfCourses.longDescription,
+                Edit : listOfCourses.Edit
+               
         }
       });
       setRow(courseData); 
-      
+     
     }
     allCourses()
   }, [])
@@ -120,6 +124,8 @@ const SenseiClassTable = () => {
                         striped
                         bordered
                         data={{ columns, rows }}
+                         
+                           
                          />
 
             </Col>
@@ -133,4 +139,4 @@ const SenseiClassTable = () => {
 
 }
 
-export default SenseiClassTable;
+export default CourseAttending;

@@ -1,8 +1,8 @@
 import React from 'react'
 import { Route } from 'react-router-dom';
 
-import StudentDashHeader from './components/StudentDashHeader';
-import StudentClassTable from './components/StudentClassTable';
+import StudentDashHeader from './studentDashComponents/StudentDashHeader';
+import StudentClassTable from './studentDashComponents/StudentClassTable';
 
 
 
