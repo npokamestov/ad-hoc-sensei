@@ -18,20 +18,19 @@ const About = () => {
             <Col>
 
                 <Jumbotron>
-                        <h1>About Us</h1>
+                        <h1>About Ad Hoc Sensei</h1>
                         <br />
                         <div>
-                        <h5>ad hoc *adjective* created or done for a particular purpose as necessary.</h5>
-                            <h5>sensei * noun * a teacher. </h5>
-                            <br/>
-                            <h3>
-                          
-                             Ad Hoc Sensei is (soon to be) an award-winning online platform for learning and teaching.
-                             <br/>
-                             Our accolades will be listed here as soon as we earn them... stay tuned!
-                            </h3>
-                          
-                            
+                               <ul>
+                                           <h5>Ad Hoc Sensei is freeform platform that allows Senseis of all stripes to create a Course, choose a date and Location then post the course to the Ad Hoc Sensei Course List.</h5>
+                                           <br />
+                                           <h5>Anyone can browse our list of courses and if something piques their interest, a quick registration process will turn them into a Student or even a potential Sensei.</h5>
+                                           <br />
+                                           <h5>After registering users can access their personal dashboard to see the courses they have registered or in the case of Senseis, they will see the courses they have created.</h5>
+                                           <br />
+                                           <h5>Whether its Yoga in the Park, a Post-Film discussion at the local diner, a course on needlepoint or a study group for the latest code technology, you can find your teacher AND your students here at Ad Hoc Sensei.</h5>
+
+                               </ul>
                         </div>
                         <br />
                         <p>

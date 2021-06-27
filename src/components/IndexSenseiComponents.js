@@ -6,6 +6,7 @@ import SenseiClassTable  from './senseiDashComponets/SenseiClassTable';
 import CourseForm  from './senseiDashComponets/CourseForm';
 import CourseAttending from './senseiDashComponets/CourseAttending';
 import CourseFormEdit from './senseiDashComponets/CourseFormEdit';
+import SendeiProfile from './senseiDashComponets/SenseiProfile';
 
 
 const IndexSenseiComponents = () => {
@@ -17,6 +18,8 @@ const IndexSenseiComponents = () => {
                 <Route  exact path='/senseidash/courseform' component={CourseForm} ></Route>
                 <Route  exact path='/senseidash/courseattending' component={CourseAttending} ></Route>
                 <Route  exact path='/senseidash/courseformedit/*' component={CourseFormEdit} ></Route>
+                <Route  exact path='/senseidash/profile' component={SendeiProfile} ></Route>
+                
           
        </div>
     )
