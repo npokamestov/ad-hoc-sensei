@@ -13,24 +13,30 @@ const About = () => {
         <Container>
         <br />
         <Row>
-            <Col></Col>
+            
 
             <Col>
 
                 <Jumbotron>
-                    <h1>About Us</h1>
-                    <p>
-                        This is a simple hero unit, a simple jumbotron-style component for calling
-                        extra attention to featured content or information.
-                    </p>
-                    <p>
-                        <Button variant="primary">Learn more</Button>
+                        <h1>About Us</h1>
+                        <br />
+                        <div>
+                            
+                            <h3>
+                          
+                             Ad Hoc Sensei is an award-winning online platform for learning and teaching.
+                            </h3>
+                          
+                        </div>
+                        <br />
+                        <p>
+                        <Button variant="primary">List Of Courses</Button>
                     </p>
                 </Jumbotron>
             </Col>
 
 
-            <Col></Col>
+           
         </Row>
 
 

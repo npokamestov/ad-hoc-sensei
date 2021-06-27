@@ -4,7 +4,7 @@ import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Row from 'react-bootstrap/Row'
 import { LinkContainer } from 'react-router-bootstrap';
-import {useHistory} from 'react-router-dom';
+
 
 
 const StudentDashHeader = () => {

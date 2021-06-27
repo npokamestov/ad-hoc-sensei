@@ -15,7 +15,7 @@ import axios from "axios";
 const Login = () => {
 
     const history = useHistory();
-    const [callBack, setCallBack] = useState([]) 
+    //const [callBack, setCallBack] = useState([]) 
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -53,10 +53,10 @@ const Login = () => {
 
     }
 
-    useEffect(() =>{
+    // useEffect(() =>{
         
-        console.log("theinside the useEffenct :"+ callBack);
-    }, [callBack])
+    //     console.log("theinside the useEffenct :"+ callBack);
+    // }, [callBack])
 
 
     return (

@@ -3,23 +3,19 @@ import Container from 'react-bootstrap/Container'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import { LinkContainer } from 'react-router-bootstrap';
-import {useHistory} from 'react-router-dom';
-
 
 
 
 const SenseiDashHeader = () => {
 
     
-    const history = useHistory();
-    //whats the diffrence replace with push
 
     return (
         <Container>
         
             <Navbar bg="primary" variant="dark">
             
-            <LinkContainer to="/"  onClick={() => history.replace('/')}>
+            <LinkContainer to="/" >
                 <Navbar.Brand >Sensei Dashbord</Navbar.Brand>
             </LinkContainer>
                 <Nav className="mr-auto">
