@@ -16,7 +16,7 @@ const SenseiDashHeader = () => {
             <Navbar bg="primary" variant="dark">
             
             <LinkContainer to="/" >
-                <Navbar.Brand >Sensei Dashbord</Navbar.Brand>
+                <Navbar.Brand >Sensei Dashboard</Navbar.Brand>
             </LinkContainer>
                 <Nav className="mr-auto">
                  

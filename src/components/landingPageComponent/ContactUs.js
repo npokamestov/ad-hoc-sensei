@@ -25,7 +25,7 @@ const ContactUs = () => {
                     <Form >
                         <Form.Text className="text-muted" >
                             <h3>Contact Us</h3>
-                            Please fill the form
+                            Please fill out the form below to contact us...
                         </Form.Text>
 
                         <br />

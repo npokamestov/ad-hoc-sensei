@@ -87,22 +87,21 @@ const Login = () => {
 
                             <br />
 
-                            <Form.Group id="formGridCheckbox">
-                                <Nav.Item>
-                                     <LinkContainer to="/home/register">
-                                    <Nav.Link>Register Instead</Nav.Link>
-                                    </LinkContainer>
-                                </Nav.Item>
-                                
-                            </Form.Group>
-
-                               
-
                             <Button variant="primary" type="submit"  
                             onClick={handleSubmit}
                             >
                                 Submit
                             </Button>
+
+                            <Form.Group id="formGridCheckbox">
+                                <Nav.Item>
+                                     <LinkContainer to="/home/register">
+                                    <Nav.Link>or Click Here to Register as a NEW Student</Nav.Link>
+                                    </LinkContainer>
+                                </Nav.Item>
+                                
+                            </Form.Group>
+
                         </Form>
                     </Alert>
                 </Col>

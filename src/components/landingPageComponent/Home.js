@@ -28,9 +28,9 @@ const Home = () => {
                         
                         <br />
                         <ul>
-                            <li>Find Your People.</li>
-                            <li>Share Your Wisdom.</li>
-                            <li>Grow Stronger.</li>
+                            <h3>Find Your People.</h3>
+                            <h3>Share Your Wisdom.</h3>
+                            <h3>Grow Stronger.</h3>
                         </ul>
                         <br />
                         <p>

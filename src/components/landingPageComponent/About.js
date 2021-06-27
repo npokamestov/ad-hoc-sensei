@@ -21,12 +21,17 @@ const About = () => {
                         <h1>About Us</h1>
                         <br />
                         <div>
-                            
+                        <h5>ad hoc *adjective* created or done for a particular purpose as necessary.</h5>
+                            <h5>sensei * noun * a teacher. </h5>
+                            <br/>
                             <h3>
                           
-                             Ad Hoc Sensei is an award-winning online platform for learning and teaching.
+                             Ad Hoc Sensei is (soon to be) an award-winning online platform for learning and teaching.
+                             <br/>
+                             Our accolades will be listed here as soon as we earn them... stay tuned!
                             </h3>
                           
+                            
                         </div>
                         <br />
                         <p>

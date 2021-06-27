@@ -100,7 +100,7 @@ const CourseForm = () => {
                                 <Form.Group controlId="formBasicSortDescription">
 
                                     <Form.Label>Short Description</Form.Label>
-                                    <Form.Control type="text" placeholder="Short Description in 10 words or less" 
+                                    <Form.Control type="text" placeholder="Short Description (10 words)" 
                                        value={shortDescription} onChange={e => setShortDescription (e.target.value)}
                                     />
 
@@ -153,7 +153,7 @@ const CourseForm = () => {
 
                                     <Form.Group controlId="longDescription">
                                         <Form.Label>Long Description</Form.Label>
-                                        <Form.Control as="textarea" rows={4} type="text" placeholder="Long Description"
+                                        <Form.Control as="textarea" rows={4} type="text" placeholder="Long Description (255 character limit)"
                                           value={longDescription} onChange={e => setLongDescription (e.target.value)}
                                          />
                                     </Form.Group>
