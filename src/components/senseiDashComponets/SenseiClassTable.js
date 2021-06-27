@@ -92,7 +92,7 @@ const SenseiClassTable = () => {
 
 
 
-  function handleEdit(courseId) {
+   function handleEdit(courseId) {
     
     history.push(`/senseidash/courseformedit/${courseId}`)
      refreshPage()
@@ -100,15 +100,15 @@ const SenseiClassTable = () => {
   }
 
 
-  function handleDelete(courseId) {
+   function handleDelete(courseId) {
     console.log("handleDelete" +courseId)
+    //localhost:8142/course/courseId
+    //localhost:8142/course/23
   }
 
 
 
-
-
-  function refreshPage() {
+   function refreshPage() {
     window.location.reload();
   }
    

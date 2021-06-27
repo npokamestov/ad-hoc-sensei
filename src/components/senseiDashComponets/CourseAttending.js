@@ -58,19 +58,7 @@ const CourseAttending = () => {
           sort: 'dsc',
           width: 10
           },
-          {
-            label: 'Edit',
-            field: 'Edit',
-            sort: 'dsc',
-            width: 10
-            },
-            {
-              label: 'Delete',
-              field: 'Delete',
-              sort: 'dsc',
-              width: 10
-              }
-          
+         
 
      ]);
 
@@ -98,7 +86,7 @@ const CourseAttending = () => {
                 duration : listOfCourses.duration,
                 capacity : listOfCourses.capacity,
                 longDescription : listOfCourses.longDescription,
-                Edit : listOfCourses.Edit
+                
                
         }
       });

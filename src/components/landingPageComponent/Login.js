@@ -7,37 +7,43 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Nav from 'react-bootstrap/Nav'
 import { LinkContainer } from 'react-router-bootstrap';
+import axios from "axios";
 import { useState , useEffect } from 'react';
 import {useHistory} from 'react-router-dom';
-import axios from "axios";
+
 
 
 const Login = () => {
 
-    const history = useHistory();
+    //const history = useHistory();
     //const [callBack, setCallBack] = useState([]) 
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     function handleSubmit (e){
-        e.preventDefault();
+       e.preventDefault();
 
         //base on call back we need change this
        //history.push('/studentdash/')
-       history.push('/senseidash/')
-       refreshPage()
+      // history.push('/senseidash/')
+      // refreshPage()
         
-
+         
         const loginData = {
             email : email,
             password : password
            
         }
-        axios.get("http://localhost:8142/login", loginData)
-                .then(res => {
-                setEmail("");
-                setPassword("");
+        console.log(loginData)
+        console.log(typeof loginData )
+        //axios.get("http://localhost:8145/login", loginData)
+        axios.get("http://localhost:8145/login", loginData)
+         .then(res => {
+
+                        console.log(res.data)
+                //setEmail("");
+                //setPassword("");
                /// setCallBack(res.data)
                 
             })
@@ -47,12 +53,10 @@ const Login = () => {
                     console.log(err)
                 });
             
-                function refreshPage() {
-                    window.location.reload();
-                  }
-
     }
-
+    function refreshPage() {
+        window.location.reload();
+      }
     // useEffect(() =>{
         
     //     console.log("theinside the useEffenct :"+ callBack);
