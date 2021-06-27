@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Alert from 'react-bootstrap/Alert'
 import { useState } from 'react';
+import {useHistory} from 'react-router-dom';
 import axios from 'axios';
 
 
@@ -14,6 +15,7 @@ import axios from 'axios';
 
 const CourseForm = () => {
 
+       const history = useHistory();
        const [title, setTitle] = useState('');
        const [category, setCategory] = useState('');
        const [date, setDate] = useState('');
@@ -26,7 +28,8 @@ const CourseForm = () => {
        
        ///senseidash/{id}
       ///Just to match the user data id with axios call
-      const [senseidashId, setSenseidashId] = useState(7);
+      //this is testing number should match with login
+      const [senseidashId, setSenseidashId] = useState(21);
 
       
 
@@ -47,7 +50,7 @@ const CourseForm = () => {
                 longDescription : longDescription,
 
             }
-            //http://localhost:8142/senseidash/"+senseidashId+""+
+           
             axios.post(`http://localhost:8142/senseidash/${senseidashId}`, courseFormData)
             .then(res => {
                 setTitle("");
@@ -58,8 +61,9 @@ const CourseForm = () => {
                 setDuration("");
                 setCapacity("");
                 setLongDescription("");
-                console.log(res.data)
+                history.push('/senseidash/senseiclasstable')
                 refreshPage();
+               
 
 
             })

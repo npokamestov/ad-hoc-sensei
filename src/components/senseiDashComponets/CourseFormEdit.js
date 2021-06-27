@@ -32,97 +32,79 @@ const CourseFormEdit = () => {
        const [capacity, setCapacity] = useState('');
        const [longDescription, setLongDescription] = useState('');
     
-       function handleSubmit(){}
       
+          
 
-        // function handleSubmit (e){
-        //     e.preventDefault();
-           
-        //     const courseFormData = {
-        //         title : title,
-        //         category : category,
-        //         date : date,
-        //         shortDescription : shortDescription,
-        //         location : location,
-        //         duration : duration,
-        //         capacity : capacity,
-        //         longDescription : longDescription,
-
-        //     }
-        //     //http://localhost:8142/senseidash/"+senseidashId+""+
-        //     axios.put(`http://localhost:8142/course/${courseId}`, courseFormData)
-        //     .then(res => {
-        //         setTitle("");
-        //         setCategory("");
-        //         setDate("");
-        //         setShortDescription("");
-        //         setLocation("");
-        //         setDuration("");
-        //         setCapacity("");
-        //         setLongDescription("");
-        //         refreshPage();
-
-        //        // console.log(res.data)
-        //         // history.push('/senseidash/')
-        //         // refreshPage()
-
-        //     })
-
-
-
-
-        //     .catch(
-        //         err => {
-        //             console.log(err)
-        //         }
-        //     )                 
-
-        // }
-
-        // function refreshPage(){
-        //     window.location.reload()
-        // }
+        ///this userEffect will roun with mounting the component and populate the fields
     useEffect(() => {
-        // axios.get(`http://localhost:8142/user/${courseId}`)
-        axios.get(`http://localhost:8142/user/${1}`)
+        
+        axios.get(`http://localhost:8142/course/${courseId}`)
             .then(res => {
+               
+                setTitle(res.data.title)
+                setTitle(res.data.title)
+                setCategory(res.data.category)
+                setDate(res.data.date)
+                setShortDescription(res.data.shortDescription)
+                setLocation(res.data.location)
+                setDuration(res.data.duration)
+                setCapacity(res.data.capacity)
+                setLongDescription(res.data.longDescription)
+                
+            })
+                  
 
-                let allAssociatCourses = res.data.senseisCreatedCourses
-                allAssociatCourses.map(data => {
+        },[])
 
 
-                    setTitle(data.title)
-                    setCategory(data.category)
-                    setDate(data.date)
-                    setShortDescription(data.shortDescription)
-                    setLocation(data.location)
-                    setDuration(data.duration)
-                    setCapacity(data.capacity)
-                    setLongDescription(data.longDescription)
-                })
 
+           function handleSubmit (e){
+            e.preventDefault();
+           
+            const courseFormData = {
+                title : title,
+                category : category,
+                date : date,
+                shortDescription : shortDescription,
+                location : location,
+                duration : duration,
+                capacity : capacity,
+                longDescription : longDescription,
 
+            }
+            //http://localhost:8142/senseidash/"+senseidashId+""+
+            axios.put(`http://localhost:8142/course/${courseId}`, courseFormData)
+            .then(res => {
+                setTitle("");
+                setCategory("");
+                setDate("");
+                setShortDescription("");
+                setLocation("");
+                setDuration("");
+                setCapacity("");
+                setLongDescription("");
+                history.push('/senseidash/senseiclasstable')
+                refreshPage();
 
 
             })
-                  
-            // response.data.senseisCreatedCourses.map((listOfCourses) => {
-               
-            //        listOfCourses.courseId,
-            //        listOfCourses.title,
-            //        listOfCourses.category,
-            //        listOfCourses.date,
-            //        listOfCourses.shortDescription,
-            //        listOfCourses.location,
-            //        listOfCourses.duration,
-            //        listOfCourses.capacity,
-            //        listOfCourses.longDescription
-   
-            // })
-   
 
 
-        },[])
+
+
+            .catch(
+                err => {
+                    console.log(err)
+                }
+            )                 
+
+        }
+
+        function refreshPage(){
+            window.location.reload()
+        }
+
+
       
       
         

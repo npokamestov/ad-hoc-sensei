@@ -11,9 +11,11 @@ import axios from "axios";
 const SenseiClassTable = () => {
   
 
-
-
   const history = useHistory();
+  
+  
+  //later we neet to match this with login id
+  const [senseidashId , setSenseidashId] = useState(21)
   const [rows, setRow] = useState([]);
   const [columns] = useState([
 
@@ -118,7 +120,7 @@ const SenseiClassTable = () => {
 
     async function allCourses() {
       //https://randomuser.me/api/?results=200&nat=us  ==>this is sample of api
-      let response = await axios.get('http://localhost:8142/user/1')
+      let response = await axios.get(`http://localhost:8142/user/${senseidashId}`)
       
             
        let courseData = response.data.senseisCreatedCourses.map(listOfCourses => {
