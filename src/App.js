@@ -18,13 +18,11 @@ function App() {
       <BrowserRouter>
          <Switch>    
           
-              {/* <Route  exact path='/' component={IndexHomeComponents} /> */}
+              
 
               <Route  exact path='/senseidash/*' component={IndexSenseiComponents} />
 
               <Route  exact path='/studentdash/*' component={IndexStudentComponents} />
-
-              {/* <Route  exact path='/' component={IndexHomeComponents} /> */}
 
               <Route  exact path='/*' component={IndexHomeComponents} />
 
