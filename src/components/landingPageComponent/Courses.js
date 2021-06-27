@@ -68,7 +68,7 @@ const Courses = () => {
   
   useEffect(() => {
     async function allCourses() {
-      
+                                    
       let response = await axios.get('http://localhost:8142/course')
   
       

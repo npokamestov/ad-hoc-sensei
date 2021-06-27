@@ -12,7 +12,7 @@ import {useHistory} from 'react-router-dom';
  
 
 
-const SenseiProfile = () => {
+const StudentProfile = () => {
 
        const history = useHistory();
        const [email, setEmail] = useState('');
@@ -22,7 +22,7 @@ const SenseiProfile = () => {
        const [bio, setBio] = useState('');
        //const [instructor, setInstructor] = useState(false);
                                               
-       const [senseidashId, setSenseidashId] = useState(21);
+       const [studentDashId, setStudentDashId] = useState();
 
        
       
@@ -71,7 +71,7 @@ const SenseiProfile = () => {
 
         useEffect(() => {
         
-            axios.get(`http://localhost:8142/user/${senseidashId}`)
+            axios.get(`http://localhost:8142/user/${studentDashId}`)
                 .then(res => {
                     
                    setEmail(res.data.email)
@@ -98,7 +98,7 @@ const SenseiProfile = () => {
 
                 }
 
-                axios.put(`http://localhost:8142/user/${senseidashId}`, profileData)
+                axios.put(`http://localhost:8142/user/${studentDashId}`, profileData)
                 .then(res => {
                     console.log(res)
                     refreshPage()
@@ -124,7 +124,7 @@ const SenseiProfile = () => {
             <br />
             <Row>
                
-            
+            <Col></Col>
 
                 <Col>
                 
@@ -185,7 +185,6 @@ const SenseiProfile = () => {
                
                 <Col></Col>
                 <Col></Col>
-                
             </Row>
 
 
@@ -193,4 +192,4 @@ const SenseiProfile = () => {
     )
 }
 
-export default SenseiProfile
+export default StudentProfile
