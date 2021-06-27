@@ -7,18 +7,30 @@ import Button from 'react-bootstrap/Button'
 import {useHistory} from 'react-router-dom';
 import axios from "axios";
 
+
 const SenseiClassTable = () => {
+  
+
+
 
   const history = useHistory();
   const [rows, setRow] = useState([]);
   const [columns] = useState([
-    
-        {
-        label: 'Course Title',
-        field: 'title',
-        sort: 'dsc',
-        width: 50
-        },
+
+
+    {
+      label: 'Id',
+      field: 'course_id',
+      sort: 'dsc',
+      width: 4
+    },
+
+    {
+      label: 'Course Title',
+      field: 'title',
+      sort: 'dsc',
+      width: 50
+    },
 
         {
         label: 'Description',
@@ -78,20 +90,28 @@ const SenseiClassTable = () => {
 
 
 
+  function handleEdit(courseId) {
+    
+    history.push(`/senseidash/courseformedit/${courseId}`)
+     refreshPage()
 
-  function handleEdit() {
-    history.push('/senseidash/courseformedit')
-    refreshPage()
   }
 
-  function handleDelete() {
-    console.log("handleDelete")
+
+  function handleDelete(courseId) {
+    console.log("handleDelete" +courseId)
   }
+
+
+
+
 
   function refreshPage() {
     window.location.reload();
   }
    
+
+  
   
   useEffect(() => {
 
@@ -105,7 +125,7 @@ const SenseiClassTable = () => {
                
         return {
           
-
+                course_id: listOfCourses.courseId,
                 title : listOfCourses.title,
                 category : listOfCourses.category,
                 date : listOfCourses.date,
@@ -114,8 +134,8 @@ const SenseiClassTable = () => {
                 duration : listOfCourses.duration,
                 capacity : listOfCourses.capacity,
                 longDescription : listOfCourses.longDescription,
-                Edit :  <Button variant="info"  onClick={() => handleEdit()}>Edit</Button>,
-                Delete :  <Button variant="danger"  onClick={() => handleDelete()}>Delete</Button>
+                Edit :  <Button variant="info"  onClick={() => handleEdit(listOfCourses.courseId)}>Edit</Button>,
+                Delete :  <Button variant="danger"  onClick={() => handleDelete(listOfCourses.courseId)}>Delete</Button>
                
         }
       });
@@ -133,7 +153,7 @@ const SenseiClassTable = () => {
       <Container>
           <Row>
             
-
+       
             <Col>
 
                      <MDBDataTable

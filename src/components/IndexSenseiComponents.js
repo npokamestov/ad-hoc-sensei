@@ -16,7 +16,7 @@ const IndexSenseiComponents = () => {
                 <Route  exact path='/senseidash/senseiclasstable' component={SenseiClassTable} ></Route>
                 <Route  exact path='/senseidash/courseform' component={CourseForm} ></Route>
                 <Route  exact path='/senseidash/courseattending' component={CourseAttending} ></Route>
-                <Route  exact path='/senseidash/courseformedit' component={CourseFormEdit} ></Route>
+                <Route  exact path='/senseidash/courseformedit/*' component={CourseFormEdit} ></Route>
           
        </div>
     )

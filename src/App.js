@@ -24,7 +24,9 @@ function App() {
 
               <Route  exact path='/studentdash/*' component={IndexStudentComponents} />
 
-              <Route  exact path='/' component={IndexHomeComponents} />
+              {/* <Route  exact path='/' component={IndexHomeComponents} /> */}
+
+              <Route  exact path='/*' component={IndexHomeComponents} />
 
               
 

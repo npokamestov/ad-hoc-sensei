@@ -7,12 +7,13 @@ import Form from 'react-bootstrap/Form'
 import Alert from 'react-bootstrap/Alert'
 import { useState  } from 'react';
 import axios from 'axios';
+import {useHistory} from 'react-router-dom';
 
 
 
 const Register = () => {
 
-
+       const history = useHistory();
        const [email, setEmail] = useState('');
        const [password, setPassword] = useState('');
        const [firstName, setFirstName] = useState('');
@@ -43,8 +44,9 @@ const Register = () => {
                 setLastName("");
                 setBio("");
                 setInstructor(false);
-                console.log(res.data)
-                refreshPage();
+                history.push('/home/login')
+                refreshPage()
+                
 
 
             })

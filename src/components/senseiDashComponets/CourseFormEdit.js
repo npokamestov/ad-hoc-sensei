@@ -5,17 +5,24 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Alert from 'react-bootstrap/Alert'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {useHistory} from 'react-router-dom';
+import {useParams} from 'react-router-dom'
 import axios from 'axios';
-
 
 
 
 
 const CourseFormEdit = () => {
 
+    
+  
+       const params = useParams();
+       const { id } = useParams();
+       const courseId = params[0];
+       
        const history = useHistory();
+
        const [title, setTitle] = useState('');
        const [category, setCategory] = useState('');
        const [date, setDate] = useState('');
@@ -24,63 +31,107 @@ const CourseFormEdit = () => {
        const [duration, setDuration] = useState('');
        const [capacity, setCapacity] = useState('');
        const [longDescription, setLongDescription] = useState('');
-
-       
-       ///senseidash/{id}
-      ///we need another call to api to check the id of login guy
-      const [senseidashId, setSenseidashId] = useState(7);
-
+    
+       function handleSubmit(){}
       
 
-
-
-
-        function handleSubmit (e){
-            e.preventDefault();
+        // function handleSubmit (e){
+        //     e.preventDefault();
            
-            const courseFormData = {
-                title : title,
-                category : category,
-                date : date,
-                shortDescription : shortDescription,
-                location : location,
-                duration : duration,
-                capacity : capacity,
-                longDescription : longDescription,
+        //     const courseFormData = {
+        //         title : title,
+        //         category : category,
+        //         date : date,
+        //         shortDescription : shortDescription,
+        //         location : location,
+        //         duration : duration,
+        //         capacity : capacity,
+        //         longDescription : longDescription,
 
-            }
-            //http://localhost:8142/senseidash/"+senseidashId+""+
-            axios.put(`http://localhost:8142/senseidash/${senseidashId}`, courseFormData)
+        //     }
+        //     //http://localhost:8142/senseidash/"+senseidashId+""+
+        //     axios.put(`http://localhost:8142/course/${courseId}`, courseFormData)
+        //     .then(res => {
+        //         setTitle("");
+        //         setCategory("");
+        //         setDate("");
+        //         setShortDescription("");
+        //         setLocation("");
+        //         setDuration("");
+        //         setCapacity("");
+        //         setLongDescription("");
+        //         refreshPage();
+
+        //        // console.log(res.data)
+        //         // history.push('/senseidash/')
+        //         // refreshPage()
+
+        //     })
+
+
+
+
+        //     .catch(
+        //         err => {
+        //             console.log(err)
+        //         }
+        //     )                 
+
+        // }
+
+        // function refreshPage(){
+        //     window.location.reload()
+        // }
+    useEffect(() => {
+        // axios.get(`http://localhost:8142/user/${courseId}`)
+        axios.get(`http://localhost:8142/user/${1}`)
             .then(res => {
-                setTitle("");
-                setCategory("");
-                setDate("");
-                setShortDescription("");
-                setLocation("");
-                setDuration("");
-                setCapacity("");
-                setLongDescription("");
-                refreshPage();
-                history.push('/senseidash/')
-                refreshPage()
+
+                let allAssociatCourses = res.data.senseisCreatedCourses
+                allAssociatCourses.map(data => {
+
+
+                    setTitle(data.title)
+                    setCategory(data.category)
+                    setDate(data.date)
+                    setShortDescription(data.shortDescription)
+                    setLocation(data.location)
+                    setDuration(data.duration)
+                    setCapacity(data.capacity)
+                    setLongDescription(data.longDescription)
+                })
+
+
+
 
             })
-            .catch(
-                err => {
-                    console.log(err)
-                }
-            )                 
+                  
+            // response.data.senseisCreatedCourses.map((listOfCourses) => {
+               
+            //        listOfCourses.courseId,
+            //        listOfCourses.title,
+            //        listOfCourses.category,
+            //        listOfCourses.date,
+            //        listOfCourses.shortDescription,
+            //        listOfCourses.location,
+            //        listOfCourses.duration,
+            //        listOfCourses.capacity,
+            //        listOfCourses.longDescription
+   
+            // })
+   
 
-        }
 
-        function refreshPage(){
-            window.location.reload()
-        }
-
+        },[])
+      
+      
+        
 
 
     return (
         <Container>
+
+          
         <br />
             <Row>
                 <Col></Col>
