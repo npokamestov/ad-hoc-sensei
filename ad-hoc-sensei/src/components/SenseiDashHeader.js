@@ -29,7 +29,7 @@ const SenseiDashHeader = () => {
                         <Nav.Link >Course Form</Nav.Link>
                     </LinkContainer>
 
-                    <LinkContainer to="/senseidash/yourcourses">
+                    <LinkContainer to="/senseidash/senseiclasstable">
                         <Nav.Link >Your Courses</Nav.Link>
                     </LinkContainer>
 

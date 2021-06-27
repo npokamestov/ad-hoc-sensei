@@ -57,7 +57,7 @@ const Register = () => {
         }
 
         function refreshPage(){
-            // window.location.reload(false)
+           
             window.location.reload()
         }
 
