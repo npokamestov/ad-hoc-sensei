@@ -67,31 +67,31 @@ const Courses = () => {
 
   
   useEffect(() => {
-    async function allEmployees() {
+    async function allCourses() {
       
-      let response = await axios.get('https://randomuser.me/api/?results=200&nat=us')
+      let response = await axios.get('http://localhost:8142/course')
+  
       
-      let employees = response.data.results.map(employee => {
+       let courseData = response.data.map(listOfCourses => {
+               
         return {
-          // first: employee.name.first,
-          // last: employee.name.last,
-          // email: employee.email,
-          // picture: <img src={employee.picture.thumbnail} alt={employee.name.first} />,
-
-                //  title : employees.title,
-                // category : employees.category,
-                // date : employees.date,
-                // shortDescription : employees.shortDescription,
-                // location : employees.location,
-                // duration : employees.duration,
-                // capacity : employees.capacity,
-                // longDescription : employees.longDescription,
+          
+          
+                title : listOfCourses.title,
+                category : listOfCourses.category,
+                date : listOfCourses.date,
+                shortDescription : listOfCourses.shortDescription,
+                location : listOfCourses.location,
+                duration : listOfCourses.duration,
+                capacity : listOfCourses.capacity,
+                longDescription : listOfCourses.longDescription
         
         }
       });
-      setRow(employees); //here should match with our data
+      setRow(courseData); 
+      
     }
-    allEmployees()
+    allCourses()
   }, [])
 
 
@@ -101,7 +101,7 @@ const Courses = () => {
 
       <Container>
           <Row>
-            <Col></Col>
+            
 
             <Col>
 
@@ -114,7 +114,7 @@ const Courses = () => {
 
             </Col>
 
-            <Col></Col>
+            
           </Row>
        </Container>
   

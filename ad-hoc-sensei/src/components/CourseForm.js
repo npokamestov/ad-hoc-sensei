@@ -24,6 +24,14 @@ const CourseForm = () => {
        const [longDescription, setLongDescription] = useState('');
 
        
+       ///senseidash/{id}
+      ///Just to match the user data id with axios call
+      const [senseidashId, setSenseidashId] = useState(1);
+
+      
+
+
+
 
         function handleSubmit (e){
             e.preventDefault();
@@ -39,8 +47,8 @@ const CourseForm = () => {
                 longDescription : longDescription,
 
             }
-            
-            axios.post("http://localhost:8142/register", courseFormData)
+            //http://localhost:8142/senseidash/"+senseidashId+""+
+            axios.post(`http://localhost:8142/senseidash/${senseidashId}`, courseFormData)
             .then(res => {
                 setTitle("");
                 setCategory("");
@@ -50,7 +58,7 @@ const CourseForm = () => {
                 setDuration("");
                 setCapacity("");
                 setLongDescription("");
-                //console.log(res.data)
+                console.log(res.data)
                 refreshPage();
 
 
