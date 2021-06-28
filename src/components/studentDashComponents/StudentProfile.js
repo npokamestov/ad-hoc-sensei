@@ -13,8 +13,12 @@ import {useHistory} from 'react-router-dom';
 
 
 const StudentProfile = () => {
+    
 
        const history = useHistory();
+
+       const [studentDashId, setStudentDashId] = useState(4);
+       
        const [email, setEmail] = useState('');
        const [password, setPassword] = useState('');
        const [firstName, setFirstName] = useState('');
@@ -22,7 +26,7 @@ const StudentProfile = () => {
        const [bio, setBio] = useState('');
        //const [instructor, setInstructor] = useState(false);
                                               
-       const [studentDashId, setStudentDashId] = useState();
+       
 
        
       

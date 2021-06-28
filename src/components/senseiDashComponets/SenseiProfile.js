@@ -12,9 +12,10 @@ import {useHistory} from 'react-router-dom';
  
 
 
-const SenseiProfile = () => {
+export const SenseiProfile = () => {
 
        const history = useHistory();
+       const [senseidashId, setSenseidashId] = useState(1);
        const [email, setEmail] = useState('');
        const [password, setPassword] = useState('');
        const [firstName, setFirstName] = useState('');
@@ -22,7 +23,7 @@ const SenseiProfile = () => {
        const [bio, setBio] = useState('');
        //const [instructor, setInstructor] = useState(false);
                                               
-       const [senseidashId, setSenseidashId] = useState(21);
+       
 
        
       
@@ -112,8 +113,6 @@ const SenseiProfile = () => {
             }
 
 
-
-
             function refreshPage(){
            
              window.location.reload()
@@ -125,7 +124,7 @@ const SenseiProfile = () => {
             <Row>
                
             
-
+           
                 <Col>
                 
                     <Alert variant="primary">

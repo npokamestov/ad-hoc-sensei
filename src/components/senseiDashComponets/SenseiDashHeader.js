@@ -3,12 +3,33 @@ import Container from 'react-bootstrap/Container'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import { LinkContainer } from 'react-router-bootstrap';
+import { useState  } from 'react';
+import { useEffect  } from 'react';
+import axios from 'axios';
+import SenseiProfile from './SenseiProfile';
+import {useHistory} from 'react-router-dom';
 
 
 
-const SenseiDashHeader = () => {
 
-    
+export const SenseiDashHeader = () => {
+
+    const [senseidashId, setSenseidashId] = useState(1);
+    const [showSenseiName, setShowSenseiName] = useState('')
+
+    useEffect(() => {
+        
+        axios.get(`http://localhost:8142/user/${senseidashId}`)
+            .then(res => {
+             // console.log(res.data.firstName)
+              setShowSenseiName(res.data.firstName)
+             // renderName();
+            })
+                  
+
+        },[])
+
+        const renderName = () => {}
 
     return (
         <Container>
@@ -16,7 +37,9 @@ const SenseiDashHeader = () => {
             <Navbar bg="primary" variant="dark">
             
             <LinkContainer to="/" >
-                <Navbar.Brand >Sensei Dashboard</Navbar.Brand>
+                <Navbar.Brand >Sensei 
+                                {showSenseiName}
+                </Navbar.Brand>
             </LinkContainer>
                 <Nav className="mr-auto">
                  

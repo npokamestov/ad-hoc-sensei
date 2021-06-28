@@ -15,7 +15,7 @@ const SenseiClassTable = () => {
   
   
   //later we neet to match this with login id
-  const [senseidashId , setSenseidashId] = useState(21)
+  const [senseidashId , setSenseidashId] = useState(1)
   const [rows, setRow] = useState([]);
   const [columns] = useState([
 
@@ -120,14 +120,14 @@ const SenseiClassTable = () => {
 
     async function allCourses() {
       //https://randomuser.me/api/?results=200&nat=us  ==>this is sample of api
-      let response = await axios.get(`http://localhost:8142/user/${senseidashId}`)
+      let response = await axios.get(`http://localhost:8142/course?senseiId=${senseidashId}`)
       
             
-       let courseData = response.data.senseisCreatedCourses.map(listOfCourses => {
-               
+       let courseData = response.data.map(listOfCourses => {
+        
         return {
           
-                course_id: listOfCourses.courseId,
+                course_id: listOfCourses.id,
                 title : listOfCourses.title,
                 category : listOfCourses.category,
                 date : listOfCourses.date,

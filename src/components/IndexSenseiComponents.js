@@ -1,6 +1,8 @@
 import React from 'react'
 import {  Route } from 'react-router-dom';
 
+
+
 import SenseiDashHeader  from './senseiDashComponets/SenseiDashHeader';
 import SenseiClassTable  from './senseiDashComponets/SenseiClassTable';
 import CourseForm  from './senseiDashComponets/CourseForm';
@@ -10,6 +12,9 @@ import SendeiProfile from './senseiDashComponets/SenseiProfile';
 
 
 const IndexSenseiComponents = () => {
+   
+
+
     return (     
         <div className="IndexSenseiComponents">
           

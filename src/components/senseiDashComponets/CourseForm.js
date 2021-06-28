@@ -16,6 +16,9 @@ import axios from 'axios';
 const CourseForm = () => {
 
        const history = useHistory();
+       const [senseidashId, setSenseidashId] = useState(1);
+
+
        const [title, setTitle] = useState('');
        const [category, setCategory] = useState('');
        const [date, setDate] = useState('');
@@ -25,16 +28,7 @@ const CourseForm = () => {
        const [capacity, setCapacity] = useState('');
        const [longDescription, setLongDescription] = useState('');
 
-       
-       ///senseidash/{id}
-      ///Just to match the user data id with axios call
-      //this is testing number should match with login
-      const [senseidashId, setSenseidashId] = useState(21);
-
-      
-
-
-
+        
 
         function handleSubmit (e){
             e.preventDefault();
@@ -51,7 +45,7 @@ const CourseForm = () => {
 
             }
            
-            axios.post(`http://localhost:8142/senseidash/${senseidashId}`, courseFormData)
+            axios.post(`http://localhost:8142/senseidash/${senseidashId}/course`, courseFormData)
             .then(res => {
                 setTitle("");
                 setCategory("");

@@ -7,7 +7,7 @@ import axios from "axios";
 
 const CourseAttending = () => {
 
-
+  const [senseidashId , setSenseidashId] = useState(1)
   const [rows, setRow] = useState([]);
   const [columns] = useState([
     
@@ -69,8 +69,8 @@ const CourseAttending = () => {
 
 
     async function allCourses() {
-      
-      let response = await axios.get('http://localhost:8142/course')
+      //we need to add a serch area of associated sensei
+      let response = await axios.get(`http://localhost:8142/course?senseiId=${senseidashId}`)
       
             
        let courseData = response.data.map(listOfCourses => {

@@ -4,6 +4,10 @@ import axios from "axios";
 
 const StudentClassTable = () => {
 
+ 
+  const [studentDashId, setStudentDashId] = useState(4);
+
+
   const [rows, setRow] = useState([]);
   const [columns] = useState([
     
@@ -43,7 +47,7 @@ const StudentClassTable = () => {
   useEffect(() => {
     async function allEmployees() {
       
-      let response = await axios.get('https://randomuser.me/api/?results=200&nat=us')
+      let response = await axios.get(`http://localhost:8142/course?senseiId=${studentDashId}`)
       
       let employees = response.data.results.map(employee => {
         return {
