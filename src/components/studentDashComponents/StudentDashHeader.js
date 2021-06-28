@@ -51,12 +51,16 @@ const RenderingMainHeader = () => {
                             <Nav.Link >Profile</Nav.Link>
                         </LinkContainer>
 
-                        <LinkContainer to="/studentdash/courses" className=" mr-sm-2">
-                            <Nav.Link >Courses</Nav.Link>
+                        <LinkContainer to="/studentdash/registercourses" className=" mr-sm-2">
+                            <Nav.Link >Register for Courses</Nav.Link>
                         </LinkContainer>
 
                         <LinkContainer to="/studentdash/coursesAttending">
                             <Nav.Link >Courses Attending</Nav.Link>
+                        </LinkContainer>
+
+                        <LinkContainer to="/studentdash/listofcourses">
+                            <Nav.Link >List Of Courses</Nav.Link>
                         </LinkContainer>
 
 

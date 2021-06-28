@@ -5,6 +5,8 @@ import StudentDashHeader from './studentDashComponents/StudentDashHeader';
 import StudentClassTable from './studentDashComponents/StudentClassTable';
 import StudentProfile from './studentDashComponents/StudentProfile';
 import CourseAttending from './studentDashComponents/CourseAttending';
+import RegisterForCourse from './studentDashComponents/RegisterForCourse';
+import AllCourses from './studentDashComponents/AllCourses';
 
 
 
@@ -18,6 +20,8 @@ const IndexStudentComponents = () => {
                   <Route  exact path='/studentdash/studentclasstable' component={StudentClassTable} ></Route>
                   <Route  exact path='/studentdash/coursesAttending' component={CourseAttending} ></Route>
                   <Route  exact path='/studentdash/profile' component={StudentProfile} ></Route>
+                  <Route  exact path='/studentdash/registercourses/*' component={RegisterForCourse} ></Route>
+                  <Route  exact path='/studentdash/listofcourses' component={AllCourses} ></Route>
              
          </div>  
     )
