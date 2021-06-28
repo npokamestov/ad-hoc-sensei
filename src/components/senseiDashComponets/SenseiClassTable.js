@@ -100,10 +100,11 @@ const SenseiClassTable = () => {
   }
 
 
-   function handleDelete(courseId) {
-    console.log("handleDelete" +courseId)
-    //localhost:8142/course/courseId
-    //localhost:8142/course/23
+    function handleDelete(courseId) {
+   /// console.log("handleDelete" +courseId)
+     axios.delete(`http://localhost:8142/course${courseId}`)
+    .then((err)=>{console.log(err)})
+   // refreshPage()
   }
 
 
@@ -119,7 +120,7 @@ const SenseiClassTable = () => {
 
 
     async function allCourses() {
-      //https://randomuser.me/api/?results=200&nat=us  ==>this is sample of api
+      
       let response = await axios.get(`http://localhost:8142/course?senseiId=${senseidashId}`)
       
             

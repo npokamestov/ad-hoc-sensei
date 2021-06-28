@@ -24,10 +24,10 @@ const Login = () => {
 
     function handleSubmit (e){
         e.preventDefault();
-        //base on call back we need change this
-        //history.push('/studentdash/')
-        history.push('/senseidash/')
-             refreshPage()
+        
+        history.push('/studentdash/')
+       //   history.push('/senseidash/')
+            refreshPage()
                
         const loginData = {
             email : email,
@@ -35,36 +35,38 @@ const Login = () => {
            
         }
              
-        //axios.post("http://localhost:8145/login", loginData)
-         //.then(res => {
-            // const userId = res.data.userId
-           //  const authority = res.data.authority.toLocaleUpperCase()
-             //const compareWithSensei = 
-            //  console.log(userId)
-            //  if (authority.match("SENSEI") ){
+        // axios.post("http://localhost:8145/login", loginData)
+        //  .then(res => {
+        //     const userId = res.data.userId
+        //     const authority = res.data.authority.toLocaleUpperCase()
+             
+        //     console.log("userid:" +userId)
+        //     console.log("authority:" +authority)
+             
+        //      if (authority.match("SENSEI") ){
 
-            //         console.log("Welcome back SENSEI")
+        //             console.log("Welcome back SENSEI")
 
-            //  } else if(authority.match("STUDENT"))
+        //      } else if(authority.match("STUDENT"))
 
-            //  {
-            //     console.log("Welcome back SENSEI")
+        //      {
+        //         console.log("Welcome back SENSEI")
                                  
-            //  } else 
-            //  {
-            //     console.log("Register please ther is no match with your info")
-            //  }
+        //      } else 
+        //      {
+        //         console.log("Register please there is no match with your info")
+        //      }
 
-             //setUserId(res.data.userId)
-              //setAuthority(res.data.authority)
-               //setCallBack(res.data)
+        //    //  setUserId(res.data.userId)
+        //     //  setAuthority(res.data.authority)
+        //       // setCallBack(res.data)
                 
-          //  })
-            //.catch(
-              //  err => {
-                  //  console.log(err)
-               // }
-          //  )  
+        //    })
+        //     .catch(
+        //        err => {
+        //            console.log(err)
+        //        }
+        //    )  
             
     }
 
@@ -91,7 +93,7 @@ const Login = () => {
 
                             <Form.Group controlId="formGridEmail">
                                 <Form.Label>Email</Form.Label>
-                                <Form.Control type="email" placeholder="example@mail.com" 
+                                <Form.Control type="email"  placeholder="example@mail.com" 
                                     value={email} onChange={e => setEmail(e.target.value)}
                                 />
                             </Form.Group>

@@ -2,6 +2,7 @@ import React from 'react'
 import Container from 'react-bootstrap/Container'
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
+import Alert from 'react-bootstrap/Alert'
 import { LinkContainer } from 'react-router-bootstrap';
 
 
@@ -14,9 +15,9 @@ const Navigation = () => {
 
 
     return (
-        
+       
         <Container>
-        
+         
             <Navbar bg="primary" variant="dark">
             
             <LinkContainer to="/">
@@ -24,7 +25,7 @@ const Navigation = () => {
             </LinkContainer>
                 <Nav className="mr-auto">
                  
-                 
+               
                     <LinkContainer to="/home/">
                         <Nav.Link >Home</Nav.Link>
                     </LinkContainer>
@@ -49,6 +50,8 @@ const Navigation = () => {
                 </Nav>
                 
             </Navbar>
+
+           
         </Container>
     )
 }
