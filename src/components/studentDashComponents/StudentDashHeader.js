@@ -7,9 +7,6 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import axios from 'axios';
-import Jumbotron from 'react-bootstrap/Jumbotron'
-import Button from 'react-bootstrap/Button'
-
 
 
 
