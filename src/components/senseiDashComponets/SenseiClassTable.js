@@ -95,7 +95,7 @@ const SenseiClassTable = () => {
    function handleEdit(courseId) {
     
     history.push(`/senseidash/courseformedit/${courseId}`)
-     refreshPage()
+    refreshPage()
 
   }
 
@@ -136,8 +136,8 @@ const SenseiClassTable = () => {
                 duration : listOfCourses.duration,
                 capacity : listOfCourses.capacity,
                 longDescription : listOfCourses.longDescription,
-                Edit :  <Button variant="info"  onClick={() => handleEdit(listOfCourses.courseId)}>Edit</Button>,
-                Delete :  <Button variant="danger"  onClick={() => handleDelete(listOfCourses.courseId)}>Delete</Button>
+                Edit :  <Button variant="info"  onClick={() => handleEdit(listOfCourses.id)}>Edit</Button>,
+                Delete :  <Button variant="danger"  onClick={() => handleDelete(listOfCourses.id)}>Delete</Button>
                
         }
       });

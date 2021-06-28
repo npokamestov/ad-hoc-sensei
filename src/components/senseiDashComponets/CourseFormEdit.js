@@ -23,6 +23,8 @@ const CourseFormEdit = () => {
        
        const history = useHistory();
 
+       const [senseidashId, setSenseidashId] = useState(1);
+
        const [title, setTitle] = useState('');
        const [category, setCategory] = useState('');
        const [date, setDate] = useState('');
@@ -35,21 +37,22 @@ const CourseFormEdit = () => {
       
           
 
-        ///this userEffect will roun with mounting the component and populate the fields
+       
     useEffect(() => {
         
         axios.get(`http://localhost:8142/course/${courseId}`)
             .then(res => {
-               
-                setTitle(res.data.title)
-                setTitle(res.data.title)
-                setCategory(res.data.category)
-                setDate(res.data.date)
-                setShortDescription(res.data.shortDescription)
-                setLocation(res.data.location)
-                setDuration(res.data.duration)
-                setCapacity(res.data.capacity)
-                setLongDescription(res.data.longDescription)
+                let results = res.data
+                
+                
+                setTitle(results.title)
+                setShortDescription(results.shortDescription)
+                setDate(results.date)
+                setDuration(results.duration)
+                setCategory(results.category)           
+                setCapacity(results.capacity)
+                setLocation(results.location)
+                setLongDescription(results.longDescription)
                 
             })
                   
@@ -72,7 +75,7 @@ const CourseFormEdit = () => {
                 longDescription : longDescription,
 
             }
-            //http://localhost:8142/senseidash/"+senseidashId+""+
+            
             axios.put(`http://localhost:8142/course/${courseId}`, courseFormData)
             .then(res => {
                 setTitle("");
