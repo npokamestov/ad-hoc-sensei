@@ -25,8 +25,8 @@ const Login = () => {
     function handleSubmit (e){
         e.preventDefault();
         
-        history.push('/studentdash/')
-       //   history.push('/senseidash/')
+       //history.push('/studentdash/')
+         history.push('/senseidash/')
             refreshPage()
                
         const loginData = {
