@@ -25,8 +25,8 @@ const Login = () => {
     function handleSubmit (e){
         e.preventDefault();
         //base on call back we need change this
-      history.push('/studentdash/')
-       // history.push('/senseidash/')
+      //history.push('/studentdash/')
+        history.push('/senseidash/')
          refreshPage()
                
         const loginData = {
