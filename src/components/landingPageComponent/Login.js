@@ -25,9 +25,9 @@ const Login = () => {
     function handleSubmit (e){
         e.preventDefault();
         
-       history.push('/studentdash/')
-        // history.push('/senseidash/')
-            refreshPage()
+       //history.push('/studentdash/')
+         //history.push('/senseidash/')
+         //   refreshPage()
                
         const loginData = {
             email : email,
@@ -35,38 +35,38 @@ const Login = () => {
            
         }
              
-        // axios.post("http://localhost:8145/login", loginData)
-        //  .then(res => {
-        //     const userId = res.data.userId
-        //     const authority = res.data.authority.toLocaleUpperCase()
+        axios.post("http://localhost:8145/login", loginData)
+         .then(res => {
+            const userId = res.data.userId
+            const authority = res.data.authority.toLocaleUpperCase()
              
-        //     console.log("userid:" +userId)
-        //     console.log("authority:" +authority)
+            console.log("userid:" +userId)
+            console.log("authority:" +authority)
              
-        //      if (authority.match("SENSEI") ){
+             if (authority.match("SENSEI") ){
 
-        //             console.log("Welcome back SENSEI")
+                history.push('/senseidash/')
+                    refreshPage()
 
-        //      } else if(authority.match("STUDENT"))
-
-        //      {
-        //         console.log("Welcome back SENSEI")
-                                 
-        //      } else 
-        //      {
-        //         console.log("Register please there is no match with your info")
-        //      }
-
-        //    //  setUserId(res.data.userId)
-        //     //  setAuthority(res.data.authority)
-        //       // setCallBack(res.data)
+             } else if(authority.match("STUDENT"))
+                    history.push('/studentdash/')
+                    refreshPage()
+             {
                 
-        //    })
-        //     .catch(
-        //        err => {
-        //            console.log(err)
-        //        }
-        //    )  
+             
+                console.log("Register please there is no match with your info")
+             }
+
+           //  setUserId(res.data.userId)
+            //  setAuthority(res.data.authority)
+              // setCallBack(res.data)
+                
+           })
+            .catch(
+               err => {
+                   console.log(err)
+               }
+           )  
             
     }
 
